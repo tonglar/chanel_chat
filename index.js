@@ -7,7 +7,7 @@ var io = require('socket.io')(http);
 
 
 
-app.get('/', function(req, res){
+app.get('/chat', function(req, res){
     res.send('<h1>Hello world</h1>');
 });
 
