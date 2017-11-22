@@ -32,17 +32,14 @@ io.on('connection', function(socket){
 });
 
 var chat = io
-    .of('/chanel1')
+    .of('/chat/chanel1')
     .on('connection', function (socket) {
         // socket.emit('a message', {
         //     that: 'only',
         //     '/chat' : 'will get'
         // });
         console.log('chanel1 connected');
-        // chat.emit('a message',{
-        //     everyone : 'has login',
-        //     '/chat' : socket.clients
-        // });
+
         socket.on('a message',function (msg) {
             console.log("a massage",msg)
             chat.emit('a message',msg);
