@@ -46,7 +46,7 @@ var chanel1 = io
         });
         socket.on('add user',function (usr) {
             console.log("add user",usr)
-            chanel2.emit('add user',usr);
+            chanel1.emit('add user',usr);
         });
         socket.on('typing' , function (username) {
             if(username == "") {
