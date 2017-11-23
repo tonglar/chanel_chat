@@ -26,7 +26,6 @@
     $(function () {
         $('form').submit(function(){
             socket.emit('a message', $('#m').val());
-            socket.emit('a message', val());
             $('#m').val('');
             return false;
         });

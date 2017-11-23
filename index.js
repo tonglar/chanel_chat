@@ -44,6 +44,10 @@ var chanel1 = io
             console.log("a massage",msg)
             chanel1.emit('a message',msg);
         });
+        socket.on('add user',function (usr) {
+            console.log("add user",usr)
+            chanel2.emit('add user',usr);
+        });
         socket.on('typing' , function (username) {
             if(username == "") {
                 console.log("Guest is typing")
@@ -52,7 +56,6 @@ var chanel1 = io
             }
         })
     });
-
 var chanel2 = io
     .of('/chanel2')
     .on('connection', function (socket) {
@@ -65,6 +68,10 @@ var chanel2 = io
         socket.on('a message',function (msg) {
             console.log("a massage",msg)
             chanel2.emit('a message',msg);
+        });
+        socket.on('add user',function (usr) {
+            console.log("add user",usr)
+            chanel2.emit('add user',usr);
         });
         socket.on('typing' , function (username) {
             if(username == "") {
