@@ -15,7 +15,7 @@ var io = require('socket.io')(http);
 // io.set('origins', '*:*');
 
 
-app.get('/chat', function(req, res){
+app.get('/', function(req, res){
     res.send('<h1>Hello world</h1>');
 });
 
@@ -32,7 +32,7 @@ io.on('connection', function(socket){
 });
 
 var chat = io
-    .of('/chat/chanel1')
+    .of('/chanel1')
     .on('connection', function (socket) {
         // socket.emit('a message', {
         //     that: 'only',
